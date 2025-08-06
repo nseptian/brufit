@@ -23,7 +23,7 @@ namespace HS{
       
     public:
       ToyManager()=default;
-    ToyManager(Int_t n):fNToys(n){};
+      ToyManager(Int_t n):fNToys(n){};
       ToyManager(const ToyManager&)=default;
       // ToyManager(Int_t n,const FitManager& fm,TString outDir="",TString resultFile=""):fNToys(n), FitManager(fm),fResultOutDir(std::move(std::move(outDir))),fResultFileName(std::move(std::move(resultFile))){};
       ToyManager(Int_t n,const FitManager& fm,TString outDir="",TString resultFile=""):fNToys(n), FitManager(fm),fResultOutDir(outDir),fResultFileName(resultFile){cout<<"ToyManager() "<<fResultFileName<<endl;};

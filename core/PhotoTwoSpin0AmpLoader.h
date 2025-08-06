@@ -478,7 +478,7 @@ TString SimplifyAll(TString moment){
     ///Create each wave (LoadParameter)
     //Now load each wave
     Int_t counter=0;
-    TString forNormalise="TMath::Sqrt(1.0";
+    // TString forNormalise="TMath::Sqrt(1.0";
    
     // for(Int_t il=lmax;il<=lmax;il++){
     // for(Int_t il=0;il<=lmax;il++){
@@ -488,27 +488,27 @@ TString SimplifyAll(TString moment){
 	if(negm==0&&im<0) continue;
 	counter++;
 	if(onlyEven == true) if(il%2==1) continue;
-	if(counter!=nwaves){//not final parameter for normalisation
+	// if(counter!=nwaves){//not final parameter for normalisation
 	  setup.LoadParameter(Form("a_%d_%d[0,-1,1]",il,im));
-	  forNormalise+=Form("-@a_%d_%d[]*@a_%d_%d[]",il,im,il,im);
-	}
+	//   forNormalise+=Form("-@a_%d_%d[]*@a_%d_%d[]",il,im,il,im);
+	// }
 
 	setup.LoadParameter(Form("aphi_%d_%d[0,%lf,%lf]",il,im,-10*TMath::Pi(),10*TMath::Pi()));
 
 	if(nRefl==2){
 	  setup.LoadParameter(Form("b_%d_%d[0,-1,1]",il,im));
-	  forNormalise+=Form("-@b_%d_%d[]*@b_%d_%d[]",il,im,il,im);
+	//   forNormalise+=Form("-@b_%d_%d[]*@b_%d_%d[]",il,im,il,im);
 	  setup.LoadParameter(Form("bphi_%d_%d[0,%lf,%lf]",il,im,-10*TMath::Pi(),10*TMath::Pi()));
 	}
       
-	if(counter==nwaves){//final parameter for normalisation
-	  forNormalise+=")";
-	  //	setup.LoadParameter(Form("a_%d_%d[0,0,1]",il,im));
-	  setup.LoadFormula(Form("a_%d_%d=%s",il,im,forNormalise.Data()));
-	  //and for connvenience i.e. do not need to know last wave name
-	  setup.LoadFormula(Form("normalise=%s",forNormalise.Data()));
+	// if(counter==nwaves){//final parameter for normalisation
+	//   forNormalise+=")";
+	//   //	setup.LoadParameter(Form("a_%d_%d[0,0,1]",il,im));
+	//   setup.LoadFormula(Form("a_%d_%d=%s",il,im,forNormalise.Data()));
+	//   //and for connvenience i.e. do not need to know last wave name
+	//   setup.LoadFormula(Form("normalise=%s",forNormalise.Data()));
 	
-	}
+	// }
       }
     }
     //////////////////////////////////////////////////////////////////
