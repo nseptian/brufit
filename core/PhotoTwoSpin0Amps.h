@@ -93,6 +93,18 @@ namespace HS{
       void SetOnlyEvenWaves(){
 	_OnlyEven=kTRUE;
       }
+      void SetNormalise(Bool_t norm=kTRUE){
+	_Normalise=norm;
+      }
+      void Normalise(Bool_t norm=kTRUE){
+	_Normalise=norm;
+      }
+      void DoNotNormalise(){
+	_Normalise=kFALSE;
+      }
+      Bool_t GetNormalise() const {
+	return _Normalise;
+      }
       void UseCircularPol(){
 	_UseI3=kTRUE;
       }
@@ -142,6 +154,7 @@ namespace HS{
       Bool_t _UseI12=kTRUE;
       Bool_t _HelicityIsCat=kFALSE;
       ComponentsPdfParser  _parser;
+      Bool_t _Normalise=kTRUE;
     };
     
   }

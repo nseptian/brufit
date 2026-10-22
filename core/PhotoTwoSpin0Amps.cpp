@@ -41,7 +41,7 @@ namespace HS{
 
       }
 
-      P2S0AmpLoader::LoadPartialWaves(*_Setup,_Lmax,_Mmax,_Nref,_OnlyEven,_NegativeM); //generate formula vars for Hs in terms of partial waves
+      P2S0AmpLoader::LoadPartialWaves(*_Setup,_Lmax,_Mmax,_Nref,_OnlyEven,_NegativeM,_Normalise); //generate formula vars for Hs in terms of partial waves
       _IsAmplitudes=kTRUE;
 
       //remove parameter circual polarisation from formula
