@@ -96,12 +96,6 @@ namespace HS{
       void SetNormalise(Bool_t norm=kTRUE){
 	_Normalise=norm;
       }
-      void Normalise(Bool_t norm=kTRUE){
-	_Normalise=norm;
-      }
-      void DoNotNormalise(){
-	_Normalise=kFALSE;
-      }
       Bool_t GetNormalise() const {
 	return _Normalise;
       }
